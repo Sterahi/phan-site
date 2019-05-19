@@ -7,6 +7,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const webpack = require('webpack')
 
 const srcDir = path.resolve(__dirname, 'client/src')
+const publicDir = path.resolve(__dirname, 'client/public')
 const buildPath = path.resolve(__dirname, 'client/dist')
 
 const webpackConfig = {
@@ -20,7 +21,7 @@ const webpackConfig = {
     plugins: [
         new CleanWebpackPlugin([buildPath]),
         new HtmlWebpackPlugin({
-            template: `${srcDir}/index.html`,
+            template: `${publicDir}/index.html`,
             filename: 'index.html',
             title: 'PhanSite',
             inject: 'body'
